@@ -32,13 +32,15 @@ const addNote = (title, body) => {
 }
 
 const getAll = () => {
-  // const notesString = fs.readFileSync('notes-data.json');
-  // notes = JSON.parse(notesString) 
+  const notesString = fs.readFileSync('notes-data.json');
+  notes = JSON.parse(notesString) 
   console.log("test");
 }
 
 const getNote = (title) => {
-  console.log('Getting note', title);
+  let notes = fetchNotes();
+  let filteredNotes = notes.filter((note) => note.title === title);
+  return filteredNotes[0];  
 }
 
 const removeNote = (title) => {
@@ -49,9 +51,17 @@ const removeNote = (title) => {
   return notes.length !== filteredNotes.length;
 }
 
+const logNote = (note) => {
+  console.log('Note');
+  console.log('--');
+  console.log(`Title: ${note.title}`)
+  console.log(`Body: ${note.body}`)
+}
+
 module.exports = {
   addNote,
   getAll,
   getNote,
-  removeNote
+  removeNote,
+  logNote
 }
