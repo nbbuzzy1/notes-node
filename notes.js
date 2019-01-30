@@ -32,8 +32,8 @@ const addNote = (title, body) => {
 }
 
 const getAll = () => {
-  const notesString = fs.readFileSync('notes-data.json');
-  notes = JSON.parse(notesString) 
+  // const notesString = fs.readFileSync('notes-data.json');
+  // notes = JSON.parse(notesString) 
   console.log("test");
 }
 
@@ -52,7 +52,9 @@ const removeNote = (title) => {
 }
 
 const logNote = (note) => {
-  console.log('Note');
+  //break on this line and use repl to output note
+  debugger;
+  //use read command with --title
   console.log('--');
   console.log(`Title: ${note.title}`)
   console.log(`Body: ${note.body}`)
