@@ -2,10 +2,11 @@ let person = {
   name: 'Nick'
 };
 
-person.age = 25;
+person.age = 26;
 
 debugger;
 
 person.name = 'John';
 
 console.log(person)
+
